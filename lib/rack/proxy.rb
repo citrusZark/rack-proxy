@@ -34,7 +34,7 @@ module Rack
       protected
 
       def reconstruct_header_name(name)
-        name.sub(/^HTTP_/, "").gsub("_", "-")
+        name.sub(/^HTTP_/, "")
       end
     end
 
