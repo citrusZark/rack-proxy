@@ -34,7 +34,12 @@ module Rack
       protected
 
       def reconstruct_header_name(name)
-        name.sub(/^HTTP_/, "")
+        temp = name.sub(/^HTTP_/, "")
+        if temp != 'OUTLET_ID'
+          temp.gsub("_", "-")
+        else
+          temp
+        end
       end
     end
 
